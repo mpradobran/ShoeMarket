@@ -12,4 +12,8 @@ import java.util.UUID;
 @Service
 public interface IServiceUsuario {
 
+    public List<Usuario> listAll();
+    public Usuario findById(UUID id);
+    public void deleteUsuario(UUID id);
+    Usuario save(Usuario user);
 }

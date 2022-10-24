@@ -10,6 +10,27 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-public class ImpServiceUsuario{
+public class ImpServiceUsuario implements IServiceUsuario {
 
+    @Autowired
+    private IUsuarioRepository userRepo;
+    @Override
+    public List<Usuario> listAll() {
+        return userRepo.findAll();
+    }
+
+    @Override
+    public Usuario findById(UUID id) {
+        return userRepo.findById(id).get();
+    }
+
+    @Override
+    public void deleteUsuario(UUID id) {
+        userRepo.deleteById(id);
+    }
+
+    @Override
+    public Usuario save(Usuario user) {
+        return userRepo.save(user);
+    }
 }
