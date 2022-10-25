@@ -1,6 +1,5 @@
 package com.uam.ecomerce.controller;
 
-import com.uam.ecomerce.model.Producto;
 import com.uam.ecomerce.model.Usuario;
 import com.uam.ecomerce.service.IServiceUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,30 +14,31 @@ import java.util.UUID;
 public class ControllerUsuario {
 
     @Autowired
-    private IServiceUsuario serviceUser;
+    @Qualifier("serviceUsuario")
+    private IServiceUsuario serviceUsuario;
 
     //1- Listar todos
     @GetMapping("list")
     private List<Usuario> listAll(){
-        return serviceUser.listAll();
+        return serviceUsuario.listAll();
     }
 
     //2 - Buscar por ID
     @GetMapping({"/{id}"})
     public Usuario getUsuario(@PathVariable UUID id) {
-        return serviceUser.findById(id);
+        return serviceUsuario.findById(id);
     }
 
     //3 - Crear y actualizar
     @PostMapping("/save")
     private Usuario save(@RequestBody Usuario user) {
-        return serviceUser.save(user);
+        return serviceUsuario.save(user);
     }
 
     //4 - Borrar por ID
     @DeleteMapping("/delete/{id}")
     public void deleteUsuario(@PathVariable UUID id) {
-        serviceUser.deleteUsuario(id);
+        serviceUsuario.deleteUsuario(id);
     }
 
 }

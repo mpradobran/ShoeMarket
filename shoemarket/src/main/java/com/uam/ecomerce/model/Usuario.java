@@ -23,5 +23,9 @@ public class Usuario {
     @OneToOne
     @JoinColumn(name="ID_OrdenCompra")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private OrdenCompra OrdenCompra;
+    private OrdenCompra ordenCompra;
+
+
+    private UUID idCompra;
+
 }

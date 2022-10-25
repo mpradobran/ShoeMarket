@@ -16,7 +16,7 @@ import java.util.UUID;
 @CrossOrigin
 public class ControllerProducto {
 
-    @Qualifier("serviceProduct")
+    @Qualifier("serviceProducto")
     @Autowired
     private IServiceProducto service;
 

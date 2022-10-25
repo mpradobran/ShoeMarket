@@ -23,10 +23,10 @@ public class OrdenCompra {
     private Double Total;
     private Date FechaCompra;
 
-    @OneToMany(mappedBy = "DetalleOrdenCompra",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "ordenCompra",cascade = CascadeType.ALL)
     private List<DetalleOrdenCompra> DetalleOrdenes;
 
-    @OneToOne(mappedBy = "Usuario",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "ordenCompra",cascade = CascadeType.ALL)
     private Usuario Usuario;
 
 }
