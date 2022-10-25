@@ -4,6 +4,7 @@ import com.uam.ecomerce.model.Producto;
 import com.uam.ecomerce.model.Usuario;
 import com.uam.ecomerce.service.IServiceUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

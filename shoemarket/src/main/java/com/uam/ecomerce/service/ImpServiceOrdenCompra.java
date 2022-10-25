@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@Component("Service Orden Compra")
+@Component("serviceOrdenCompra")
 public class ImpServiceOrdenCompra implements IServiceOrdenCompra {
 
     @Autowired
@@ -36,15 +36,15 @@ public class ImpServiceOrdenCompra implements IServiceOrdenCompra {
         }
         o.setDetalleOrdenes(Detalle);
 
-       /*save master
-       //order.setDetalles(null);
-       //Order o = repo.save(order);
-       for (DetalleOrder det : detalles) {
-           det.setOrder(o);
-       }
-       repoDet.saveAll(detalles);
-       o.setDetalles(detalles);
-       return o;*/
+//       save master
+//       order.setDetalles(null);
+//       Order o = repo.save(order);
+//       for (DetalleOrder det : detalles) {
+//           det.setOrder(o);
+//       }
+//       repoDet.saveAll(detalles);
+//       o.setDetalles(detalles);
+//       return o;
         return repo.save(o);
     }
-}  <<
+}

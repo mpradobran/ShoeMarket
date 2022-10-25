@@ -12,7 +12,7 @@ import java.util.List;
 public class ControllerOrdenCompra {
 
     @Autowired
-    //@Qualifier(name="serviceOrdenCompra")
+    @Qualifier("serviceOrdenCompra")
     private IServiceOrdenCompra service;
 
     //1.Listar Todos
