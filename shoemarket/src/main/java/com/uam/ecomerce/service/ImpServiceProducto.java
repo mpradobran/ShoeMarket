@@ -45,7 +45,7 @@ public class ImpServiceProducto implements IServiceProducto {
         }
         ObjectMapper objectMapper = new ObjectMapper();
         Producto product = objectMapper.readValue(productDto, Producto.class);
-        product.setImagen(image.getOriginalFilename());
+        product.setImagenes(image.getOriginalFilename());
         return repo.save(product);
     }
     @Override

@@ -4,6 +4,7 @@ package com.uam.ecomerce.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -22,6 +23,7 @@ public class Producto {
     private String Nombre;
     private Float Precio;
     private String Descripcion;
-    private String Imagen;
-    private int Stock;
+
+    @OneToMany(mappedBy = "producto")
+    private List<Imagenes> imagenes;
 }
