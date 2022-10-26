@@ -26,7 +26,7 @@ public class OrdenCompra {
     @OneToMany(mappedBy = "ordenCompra",cascade = CascadeType.ALL)
     private List<DetalleOrdenCompra> DetalleOrdenes;
 
-    @OneToOne(mappedBy = "ordenCompra",cascade = CascadeType.ALL)
-    private Usuario Usuario;
+    @ManyToOne//(mappedBy = "ordenCompra",cascade = CascadeType.ALL)
+    private Usuario usuario;
 
 }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -20,10 +21,10 @@ public class Usuario {
     private String Correo;
     private String Celular;
 
-    @OneToOne
+    @OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
     @JoinColumn(name="ID_OrdenCompra")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private OrdenCompra ordenCompra;
+    private List<OrdenCompra> ordenCompra;
 
 
     private UUID idCompra;
