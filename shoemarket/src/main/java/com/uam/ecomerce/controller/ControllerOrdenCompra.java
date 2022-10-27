@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -22,7 +23,7 @@ public class ControllerOrdenCompra {
     }
 
     @PostMapping("/save")
-    public OrdenCompra saveOrder(@RequestBody OrdenCompra order){
-        return service.saveOrder(order);
+    public OrdenCompra saveOrder(@RequestBody OrdenCompra compra) throws IOException {
+        return service.saveOrder(compra);
     }
 }

@@ -22,11 +22,10 @@ public class OrdenCompra {
     private UUID ID;
     private Double Total;
     private Date FechaCompra;
-
-    @OneToMany(mappedBy = "ordenCompra",cascade = CascadeType.ALL)
+    private String image;
+    @OneToMany(mappedBy = "ordenCompra")
     private List<DetalleOrdenCompra> DetalleOrdenes;
 
-    @ManyToOne//(mappedBy = "ordenCompra",cascade = CascadeType.ALL)
-    private Usuario usuario;
 
+    private Long usuario;
 }

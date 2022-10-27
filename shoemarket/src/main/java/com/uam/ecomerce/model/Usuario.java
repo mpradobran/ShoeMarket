@@ -22,8 +22,6 @@ public class Usuario {
     private String Celular;
 
     @OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
-    @JoinColumn(name="ID_OrdenCompra")
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<OrdenCompra> ordenCompra;
 
 

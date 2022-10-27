@@ -19,11 +19,9 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
             generator = "producto_seq")
 
-    private UUID ID;
+    private Long ID;
     private String Nombre;
     private Float Precio;
     private String Descripcion;
-
-    @OneToMany(mappedBy = "producto")
-    private List<Imagenes> imagenes;
+    private String image;
 }
